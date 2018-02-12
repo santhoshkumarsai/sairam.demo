@@ -12,9 +12,9 @@
      - httpd
      - ntp
      - git
- # -  name: manage service 
- #    service: name={{item}} state=started
- #    with_items:
- #    - httpd
- #    - ntpd
- # -  git: repo=https://github.com/demoglot/html-samples-doctor.git dest=/var/www/html
+  -  name: manage service 
+     service: name={{item}} state=started
+     with_items:
+     - httpd
+     - ntpd
+  -  git: repo=https://github.com/demoglot/html-samples-doctor.git dest=/var/www/html
