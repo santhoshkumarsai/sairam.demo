@@ -1,0 +1,15 @@
+---
+- hosts: food-web
+  vars:
+    - port: 80
+  roles:
+    - sairam.users
+    - sairam.httpd
+  tasks:
+  - git: repo=https://github.com/demoglot/html-samples-food.git dest=/var/www/html
+
+- hosts: food-db
+  roles:
+    - sairam.users 
+    - sairam.mariadb
+

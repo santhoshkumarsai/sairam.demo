@@ -1,0 +1,15 @@
+---
+- hosts: docter
+  vars:
+    - port: 8080
+  roles:
+    - sairam.users
+    - sairam.httpd
+  tasks:
+  - git: repo=https://github.com/demoglot/html-samples-docter.git dest=/var/www/html
+
+- hosts: food-db
+  roles:
+    - sairam.users 
+    - sairam.mariadb
+
