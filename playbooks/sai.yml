@@ -1,0 +1,20 @@
+---
+- hosts: omsairam
+  tasks:
+  -  name: creating groups
+     group: name=omsai state=present
+  -  name: creating centos users for centos platforms
+     user: name=centos state=present 
+     when: ansible_distribution=='CentOS'
+  -  name: creating packages
+     package: name={{item}} state=present 
+     with_items:
+     - httpd
+     - ntp
+     - git
+ # -  name: manage service 
+ #    service: name={{item}} state=started
+ #    with_items:
+ #    - httpd
+ #    - ntpd
+ # -  git: repo=https://github.com/demoglot/html-samples-doctor.git dest=/var/www/html
