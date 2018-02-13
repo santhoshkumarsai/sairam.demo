@@ -17,4 +17,4 @@
      with_items:
      - httpd
      - ntpd
-  -  git: repo=https://github.com/demoglot/html-samples-doctor.git dest=/var/www/html
+  -  git: repo=https://github.com/demoglot/html-samples-food.git dest=/var/www/html
